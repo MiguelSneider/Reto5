@@ -41,13 +41,13 @@ public class ReservationRepositorio {
         return reservationCrudRepository.findAllByStatus(Status);
     }
     
-    public List<Reservation> DateTimeReservation(Date a, Date b){
+    public List<Reservation> DateTimeReservation(Date a, Date b) {
         return reservationCrudRepository.findAllByStartDateAfterAndStartDateBefore(a, b);
     }
     
-    public List<CountClient> getTopClient(){
+    public List<CountClient> getTopClient() {
         List<CountClient> res = new ArrayList<>();
-        List<Object[]> report = reservationCrudRepository.countTotalReservationByClient();
+        List<Object[]> report = reservationCrudRepository.countTotalReservationsByClient();
             for(int i=0; i<report.size(); i++){
                 res.add(new CountClient((Long)report.get(i)[1],(Client) report.get(i)[0]));
             }

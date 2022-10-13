@@ -61,12 +61,12 @@ public class ReservationControlador {
     }
     
     @GetMapping("/report-clients")
-    public List<CountClient> getReservationReportClient() {
+    public List<CountClient> getReservationsReportClient() {
         return reservationService.getTopClient();
     }
     
     @GetMapping("/report-dates/{dateOne}/{dateTwo}")
-    public List<Reservation> getReservationReportDates(@PathVariable("dateOne") String dateOne, @PathVariable("dateTwo") String dateTwo) {
+    public List<Reservation> getReservationsReportDates(@PathVariable("dateOne") String dateOne, @PathVariable("dateTwo") String dateTwo) {
         return reservationService.DateTimeReservation(dateOne, dateTwo);
     }
     

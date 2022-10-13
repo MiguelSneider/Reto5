@@ -19,5 +19,5 @@ public interface ReservationInterface extends CrudRepository <Reservation, Integ
     public List<Reservation> findAllByStartDateAfterAndStartDateBefore(Date dateOne, Date dateTwo);
     
     @Query("SELECT c.client, COUNT(c.client) from Reservation AS c group by c.client order by COUNT(c.client) DESC")
-    public List<Object[]> countTotalReservationByClient();
+    public List<Object[]> countTotalReservationsByClient();
 }

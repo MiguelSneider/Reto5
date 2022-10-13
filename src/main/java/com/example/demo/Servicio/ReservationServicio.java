@@ -96,7 +96,7 @@ public class ReservationServicio {
             e.printStackTrace();
         }
         if(a.before(b)){
-            return reservationRepository.DateTimeReservation(a, a);
+            return reservationRepository.DateTimeReservation(a, b);
         } else {
             return new ArrayList<>();
         }        
